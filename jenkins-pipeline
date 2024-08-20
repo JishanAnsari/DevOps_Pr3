@@ -2,33 +2,42 @@
 
 pipeline {
     agent any
+    environment {
+        // Explicitly add Maven to the PATH if it's not already there.
+        PATH = "/path/to/maven/bin:$PATH"
+    }
     stages {
-        stage('Validate Maven Project') {
+        stage('Print Environment Variables') {
             steps {
-                script {
-                   bat 'mvn validate'
-                }
+                // Print the PATH variable to check if Maven's bin directory is included
+                sh 'echo $PATH'
+                
+                // Check Maven version to ensure it's accessible
+                sh 'mvn -v'
             }
         }
-        stage('Comipile Maven Project') {
+        stage('Validate Maven Project') {
             steps {
-                script {
-                    bat 'mvn compile'
-                }
+                // Run Maven validate phase
+                sh 'mvn validate'
+            }
+        }
+        stage('Compile Maven Project') {
+            steps {
+                // Run Maven compile phase
+                sh 'mvn compile'
             }
         }
         stage('Test Maven Project') {
             steps {
-                script {
-                    bat 'mvn test'
-                }
+                // Run Maven test phase
+                sh 'mvn test'
             }
         }
         stage('Package Maven Project') {
             steps {
-                script {
-                    bat 'mvn package'
-                }
+                // Run Maven package phase
+                sh 'mvn package'
             }
         }
     }
