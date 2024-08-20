@@ -6,28 +6,28 @@ pipeline {
         stage('Validate Maven Project') {
             steps {
                 script {
-                   echo "mvn validate"
+                   bat 'mvn validate'
                 }
             }
         }
         stage('Comipile Maven Project') {
             steps {
                 script {
-                    echo "mvn compile"
+                    bat 'mvn compile'
                 }
             }
         }
         stage('Test Maven Project') {
             steps {
                 script {
-                    echo "mvn test"
+                    bat 'mvn test'
                 }
             }
         }
         stage('Package Maven Project') {
             steps {
                 script {
-                    echo "mvn package"
+                    bat 'mvn package'
                 }
             }
         }
