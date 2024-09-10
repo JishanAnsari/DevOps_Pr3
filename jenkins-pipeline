@@ -28,6 +28,17 @@ pipeline {
             steps {
                 script {
                     bat 'mvn package'
+        stage('Installation in Local') {
+            steps {
+                script {
+                    bat 'mvn install'
+                }
+            }
+        }
+        stage('Deployment') {
+            steps {
+                script {
+                    bat 'mvn deploy'
                 }
             }
         }
