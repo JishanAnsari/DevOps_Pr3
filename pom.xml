@@ -4,18 +4,18 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.TC5_B.app</groupId>
-  <artifactId>my-app</artifactId>
+  <groupId>com.TC6_A.app</groupId>
+  <artifactId>first-app</artifactId>
   <version>1.0-SNAPSHOT</version>
 
-  <name>my-app</name>
+  <name>first-app</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>1.7</maven.compiler.source>
-    <maven.compiler.target>1.7</maven.compiler.target>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
   </properties>
 
   <dependencies>
@@ -27,13 +27,13 @@
     </dependency>
   </dependencies>
 
-  <distributionManagement>
+<distributionManagement>
     <repository>
-      <id>local-repo</id>
-      <name>Releases Repository</name>
-      <url>file:///C:/xampp/htdocs</url>
+        <id>local-repo</id>
+        <name>Releases Repository</name>
+        <url>file:///C:/xampp/htdocs</url>
     </repository>
-  </distributionManagement>
+</distributionManagement>
   <build>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
@@ -58,14 +58,6 @@
         <plugin>
           <artifactId>maven-jar-plugin</artifactId>
           <version>3.0.2</version>
-          <configuration>
-          <archive>
-            <manifest>
-            <addClasspath>true</addClasspath>
-            <mainClass>com.TC5_B.app.App</mainClass>
-            </manifest>
-          </archive>
-          </configuration>
         </plugin>
         <plugin>
           <artifactId>maven-install-plugin</artifactId>
